@@ -1,6 +1,6 @@
 import request from 'superagent';
 
-const URL = 'https://kpopgroups.herokuapp.com/'
+const URL = 'https://rocky-wildwood-92332.herokuapp.com/'
 
 export async function getAllKpopGroups() {
     const { body } = await request.get(`${URL}/kpop`);

@@ -8,9 +8,9 @@ export default class ListPage extends Component {
     }
 
     componentDidMount = async () => {
-        const kpopgroups = await getAllKpopGroups();
+        const kpop = await getAllKpopGroups();
 
-        this.setState({kpop: kpopgroups})
+        this.setState({kpop: kpop})
     }
 
     render() {

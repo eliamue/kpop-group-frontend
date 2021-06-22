@@ -30,7 +30,7 @@ export async function createKpopGroup(kpopData /* whatever the user put in the f
     return body;
 }
 
-export async function getAllGroupGenderss() {
+export async function getAllGroupGenders() {
     const { body } = await request.get(`${URL}/genders`);
 
     return body;

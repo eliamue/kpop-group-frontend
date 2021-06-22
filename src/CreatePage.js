@@ -4,8 +4,9 @@ import { createKpopGroup } from './fetch-utils';
 export default class CreatePage extends Component {
     state = {
         name: '',
-        complexity: 0,
-        category_id: 1,
+        members: 1,
+        debut_year: 2015,
+        gender_id: 1,
     }
 
     handleNameChange = e => {
@@ -30,6 +31,7 @@ export default class CreatePage extends Component {
         await createKpopGroup({
             name: this.state.name,
             members: this.state.members,
+            debut_year: this.state.debut_year,
             gender_id: this.state.gender_id
         });
 
@@ -46,18 +48,22 @@ export default class CreatePage extends Component {
                     </label>
                     <label>
                         Number of Members
-                        <input type='number' onChange={this.handleMembersChange} />
+                        <input type='number' maxLength='2' onChange={this.handleMembersChange} />
                     </label>
                     <label>
-                        Gender of Group
+                        Debut Year
+                        <input type='number' maxLength='4' onChange={this.handleDebutYearChange} />
+                    </label>
+                    <label>
+                        Gender of Group*
                         <select onChange={this.handleGenderChange}>
                             <option value="1">Male</option>
                             <option value="2">Female</option>
-                            <option value="3">Other</option>
                         </select>
                     </label>
                     <button>Create!</button>
                 </form>
+                <p>*For the purpose of this exercise, only 2 genders on the gender spectrum are listed. Be gay, do crime, eat the rich, screw the gender binary and norms.</p>
             </div>
         )
     }

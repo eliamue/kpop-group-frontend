@@ -1,6 +1,6 @@
 import request from 'superagent';
 
-const URL = 'https://kpop-group-api.herokuapp.com/'
+const URL = 'https://rocky-wildwood-92332.herokuapp.com/'
 
 export async function getAllKpopGroups() {
     const { body } = await request.get(`${URL}/kpop`);
@@ -30,7 +30,7 @@ export async function createKpopGroup(kpopData /* whatever the user put in the f
     return body;
 }
 
-export async function getAllGroupGenderss() {
+export async function getAllGroupGenders() {
     const { body } = await request.get(`${URL}/genders`);
 
     return body;

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { getAllKpopGroups } from './fetch-utils';
-// import { Link } from 'react-router-dom';
-// import KpopItem from './KpopItem.js';
+import { Link } from 'react-router-dom';
 
 export default class ListPage extends Component {
     state = { 
@@ -18,12 +17,14 @@ export default class ListPage extends Component {
         return (
             <div>
                 {
-                    this.state.kpop.map(kpop => <div className="kpop-data">
+                    this.state.kpop.map(kpop => <Link to={`/kpop/${kpop.id}`}>
+                    <div>
                         <p>{kpop.name}</p>
                         <p>{kpop.members}</p>
                         <p>{kpop.gender}</p>
                         <p>{kpop.debut_year}</p>
-                    </div>)
+                    </div>
+                    </Link>)
                 }
             </div>
         )

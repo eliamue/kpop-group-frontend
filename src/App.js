@@ -1,18 +1,16 @@
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import React from 'react';
 import ListPage from './ListPage.js';
-import KpopDetail from './KpopDetail.js';
+import DetailPage from './DetailPage.js';
+// import KpopDetail from './KpopDetail.js';
 import './App.css';
+import Header from './Header.js';
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Switch>
-          <Route path="/kpop/:id" exact component={KpopDetail}/>
-            <Route path="/kpop" exact component={ListPage}/>
-        </Switch>
-      </div>
-    </BrowserRouter>
+    <div>
+      <Header />
+      <ListPage />
+    </div>
   );
 }
 

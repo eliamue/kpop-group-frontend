@@ -1,38 +1,103 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap');
+
+body {
+  --color1: hsla(45, 86%, 83%, 1);
+  --color2: hsla(135, 65%, 98%, 1);
+  --color3: hsla(315, 37%, 86%, 1);
+  --color4: hsla(45, 73%, 98%, 1);
+  --color5: hsla(224, 40%, 79%, 1); 
+  
+  --header-height: 80px;
+  --shadow: 0px 10px 20px -12px rgba(0,0,0,0.45);
+  --gutter: 30px;
+  --footer-height: 25px;
+  
+  font-family: 'Titillium Web', sans-serif;
+  background-color: var(--color2);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: calc(var(--footer-height));
+}
+
+section {
+  background-color: var(--color5);
+  width: 1000px;
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: var(--gutter);
+  padding-bottom: var(--gutter);
+  margin-top: var(--gutter);
+  margin-bottom: var(--gutter);
+  border: solid 2px var(--color1);
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  background-color: var(--color3);
+  height: var(--header-height);
+  box-shadow: var(--shadow);
+}
+
+footer {
+  display: flex;
+  justify-content: flex-end;
+  background-color: var(--color3);
+  box-shadow: var(--shadow);
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.gutter-right {
+  margin-right: 20px;
+}
+
+.center {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main-logo {
+  animation: pulse 5s infinite ease-in-out;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+p {
+  margin: var(--gutter);
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  text-shadow: 5px 5px 10px black;
+}
+
+@keyframes pulse {
+  20% {
+    transform: rotate3d(-10, -10, -10, 50deg) scale(1.2);
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  40% {
+      transform: rotate3d(10, 10, -10, 50deg) scale(1);
   }
-  to {
-    transform: rotate(360deg);
+
+  60% {
+      transform: rotate3d(-10, 10, 10, 50deg) scale(1.2);
+    }
+
+  80% {
+      transform: rotate3d(10, 10, 10, 50deg) scale(1);
   }
+
+}
+
+button {
+  font-size: 20px;
+  margin: 5px;
 }

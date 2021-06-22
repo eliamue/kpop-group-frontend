@@ -1,42 +1,30 @@
 import React, { Component } from 'react';
-import request from 'superagent';
-import KpopList from './KpopList.js';
-
-const sleep = (x) => new Promise((res, rej) => setTimeout(() => { res() }, x))
+import { getAllKpopGroups } from './fetch-utils';
+// import { Link } from 'react-router-dom';
+// import KpopItem from './KpopItem.js';
 
 export default class ListPage extends Component {
-    state = {
-        kpoplist: [],
-        loading: true,
-    };
+    state = { 
+        kpop: []
+    }
 
-componentDidMount = async () => {
-    await this.fetchKpop();
-};
+    componentDidMount = async () => {
+        const kpop = await getAllKpopGroups();
 
-fetchKpop = async () => {
-    this.setState({
-        loading: true
-    })
-
-    const URL = `https://kpop-group-api.herokuapp.com/kpop`;
-
-    const data = await request.get(URL)
-    await sleep(1000)
-
-    this.setState({
-        loading: true,
-        kpoplist: data.body
-    })
-}
-
+        this.setState({kpop: kpop})
+    }
 
     render() {
         return (
             <div>
-                <KpopList
-                kpoplist={this.state.kpoplist}
-                />
+                {
+                    this.state.kpop.map(kpop => <div className="kpop-data">
+                        <p>{kpop.name}</p>
+                        <p>{kpop.members}</p>
+                        <p>{kpop.gender}</p>
+                        <p>{kpop.debut_year}</p>
+                    </div>)
+                }
             </div>
         )
     }

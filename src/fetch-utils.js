@@ -3,13 +3,15 @@ import request from 'superagent';
 const URL = 'https://rocky-wildwood-92332.herokuapp.com'
 
 export async function getAllKpopGroups() {
-    const { body } = await request.get(`${URL}/kpop`);
+    const { body } = await request
+    .get(`${URL}/kpop`);
 
     return body;
 }
 
 export async function getOneKpopGroup(id) {
-    const { body } = await request.get(`${URL}/kpop/${id}`);
+    const { body } = await request
+    .get(`${URL}/kpop/${id}`);
 
     return body;
 }
@@ -31,13 +33,15 @@ export async function createKpopGroup(kpopData /* whatever the user put in the f
 }
 
 export async function getAllGroupGenders() {
-    const { body } = await request.get(`${URL}/genders`);
+    const { body } = await request
+    .get(`${URL}/genders`);
 
     return body;
 }
 
 export async function deleteKpopGroup(id) {
-    const { body } = await request.delete(`${URL}/kpop/${id}`);
+    const { body } = await request
+    .delete(`${URL}/kpop/${id}`);
 
     return body;
 }

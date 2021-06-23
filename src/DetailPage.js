@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getAllGroupGenders, getOneKpopGroup, updateKpopGroup } from './fetch-utils';
+import { getAllGroupGenders, getOneKpopGroup, updateKpopGroup, deleteKpopGroup } from './fetch-utils';
 
 export default class DetailPage extends Component {
     state = {
@@ -40,14 +40,22 @@ handleGenderChange = e => {
     this.setState({ gender_id: e.target.value });
 }
 
+handleDelete = e => {
+    // this.setState({ gender_id: e.target.reset() });
+    deleteKpopGroup(this.props.match.params.id);
+    this.props.history.push('/');
+    window.location.reload();
+    };
+
 handleSubmit= async e => {
     e.preventDefault();
-
+console.log(this.state.gender_id);
     await updateKpopGroup(this.props.match.params.id, {
         name: this.state.name,
         members: this.state.members,
         debut_year: this.state.debut_year,
-        gender_id: this.state.gender_id
+        gender_id: this.state.gender_id,
+        owner_id: 1
     });
     this.props.history.push('/')
 }
@@ -63,11 +71,11 @@ handleSubmit= async e => {
                     </label>
                     <label>
                         Members
-                        <input value={this.state.members} onChange={this.handleMembersChange} />
+                        <input value={this.state.members} type='number' onChange={this.handleMembersChange} />
                     </label>
                     <label>
                         Debut Year
-                        <input value={this.state.debut_year} onChange={this.handleDebutYearChange} />
+                        <input value={this.state.debut_year} type='number' onChange={this.handleDebutYearChange} />
                     </label>
                     <label>
                         Gender of Group
@@ -76,12 +84,17 @@ handleSubmit= async e => {
                                 <option
                                     selected={gender.id === this.state.gender_id} 
                                     value={gender.id}>
-                                    {gender.gender}
-                                </option>)}
+                                    {gender.group_gender}
+                                </option>
+                                )
+                                }
+                            <option>select</option>
                         </select>
                     </label>
                     <button className="update-btn">Update</button>
                 </form>
+                
+                <button onClick={this.handleDelete} className="delete-btn">Delete</button>
             </div>
         )
     }

@@ -41,7 +41,7 @@ export default class CreatePage extends Component {
 
     render() {
         return (
-            <div>
+            <div className='detail'>
                 <form onSubmit={this.handleSubmit}>
                     <label>
                         Name of Group: 

@@ -63,7 +63,7 @@ console.log(this.state.gender_id);
     render() {
         console.log(this.state);
         return (
-            <div>
+            <div className='detail'>
                 <h2>Update Kpop Group</h2>
                 <form onSubmit={this.handleSubmit}>
                     <label>

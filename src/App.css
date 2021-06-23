@@ -91,6 +91,7 @@ button {
   border: 1px solid rgb(47, 1, 99);
   width: 600px;
   background-color:rgba(245, 181, 158, 0.324);
+  padding-bottom: 15px;
 }
 
 .pgroups {
@@ -182,4 +183,11 @@ button {
 
 button:hover {
   font-weight: bolder;
+}
+
+.detail {
+  background-image: url('./bts.jpg');
+  background-size: 100%;
+  padding: 50px;
+  border: 5px double rgb(12, 103, 103);
 }

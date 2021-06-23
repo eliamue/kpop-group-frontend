@@ -27,7 +27,7 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color:rgba(205, 126, 180, 0.399);
+  background-color:rgba(126, 205, 193, 0.399);
   padding-left: 15px;
   height: min-content;
 }
@@ -41,9 +41,15 @@ h1 {
 }
 
 h2 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: bold;
   font-family: 'Fredericka the Great';
+}
+
+h3 {
+  font-size: 1rem;
+  font-family: 'Forum';
+  margin-top: 30px;
 }
 
 a:link {
@@ -73,6 +79,7 @@ button {
   flex-direction: column;
   align-content: center;
   justify-content: space-evenly;
+  
 }
 
 .kpoplist {
@@ -83,7 +90,7 @@ button {
   justify-content: space-evenly;
   border: 1px solid rgb(47, 1, 99);
   width: 600px;
-  background-color:rgba(183, 121, 187, 0.488);
+  background-color:rgba(245, 181, 158, 0.324);
 }
 
 .pgroups {
@@ -98,6 +105,8 @@ button {
   padding: 5px;
   background-color:rgba(105, 61, 175, 0.605);
   margin-top: 20px;
+  background-image: url('./bts.jpg');
+  background-size: cover;
 }
 
 label {
@@ -138,6 +147,7 @@ label {
 .debut {
   font-size: 30px;
   font-weight: bold;
+  text-align: center;
 }
 
 .stats {
@@ -151,6 +161,7 @@ label {
   border-radius: 20px;
   border: 1px double rgb(62, 6, 118);
   width: 70%;
+  padding-top: 20px;
 }
 
 .disclaimer {

@@ -17,8 +17,8 @@ export default class App extends Component {
       <div className='kpop-groups'>
         <header>
           <h1>Kpop Groups</h1>
-          <p><Link to ="/">Home</Link></p>
-          <p><Link to ="/create">Add a Kpop Group</Link></p>
+          <h3 className="nav"><Link to ="/">Home</Link></h3>
+          <h3 className="nav"><Link to ="/create">Add a Kpop Group</Link></h3>
         </header>
         <Switch>
           <Route 

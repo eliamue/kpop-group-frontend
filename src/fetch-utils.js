@@ -24,7 +24,7 @@ export async function updateKpopGroup(id, kpopData) {
     return body;
 }
 
-export async function createKpopGroup(kpopData /* whatever the user put in the form*/) {
+export async function createKpopGroup(kpopData) {
     const { body } = await request
     .post(`${URL}/kpop`)
     .send(kpopData);

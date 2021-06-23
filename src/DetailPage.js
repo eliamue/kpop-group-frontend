@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { getAllGroupGenders, getOneKpopGroup, updateKpopGroup, deleteKpopGroup } from './fetch-utils';
+import './App.css';
 
 export default class DetailPage extends Component {
     state = {

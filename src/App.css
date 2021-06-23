@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Forum&family=Fredericka+the+Great&family=Londrina+Shadow&family=Rock+Salt&display=swap');
 
 body {
 
   --color1: rgb(0, 136, 255);
-  --color2: rgb(201, 162, 197);
+  --color2: rgb(174, 138, 215);
   --color3: rgb(250, 6, 185);
   --color4: rgb(255, 191, 0);
   --color5: rgb(170, 0, 255); 
@@ -22,27 +23,43 @@ body {
 header {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   position: fixed;
   top: 0;
   width: 100%;
   background-color:rgba(205, 126, 180, 0.399);
   padding-left: 15px;
-  height: 10%;
+  height: min-content;
 }
 
 h1 {
   font-size: 2rem;
   font-weight: bold;
+  font-family: 'Fredericka the Great';
+  align-self: center;
+  text-shadow: 5px 10px 8px rgba(32, 0, 75, 0.564);
 }
 
 h2 {
   font-size: 1.8rem;
   font-weight: bold;
+  font-family: 'Fredericka the Great';
+}
+
+a:link {
+  text-decoration: none;
+  
+}
+
+a:hover {
+  box-shadow: 5px 15px 15px rgb(39, 13, 80);
+  font-weight: bolder;
 }
 
 p {
-  color: rgb(92, 1, 48);
+  color: rgb(13, 1, 92);
+  font-family: forum;
+  padding-top: 5px;
 }
 
 button {
@@ -64,7 +81,7 @@ button {
   flex-direction: column;
   align-content: center;
   justify-content: space-evenly;
-  border: 1px solid maroon;
+  border: 1px solid rgb(47, 1, 99);
   width: 600px;
   background-color:rgba(183, 121, 187, 0.488);
 }
@@ -75,11 +92,11 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  border: 3px double maroon;
+  border: 3px double rgb(38, 0, 128);
   width: 500px;
   margin: 5px;
   padding: 5px;
-  background-color:rgba(183, 121, 187, 0.735);
+  background-color:rgba(105, 61, 175, 0.605);
   margin-top: 20px;
 }
 
@@ -92,7 +109,8 @@ label {
   font-size: 40px;
   color: rgb(0, 0, 0);
   font-weight: bolder;
-  text-shadow: 5px 5px 10px gray;
+  text-shadow: 5px 2px 10px rgb(138, 65, 255);
+  font-family: 'Fredericka the Great';
 }
 
 .members, .gender {
@@ -127,12 +145,11 @@ label {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color:rgba(254, 207, 244, 0.564);
+  background-color:rgba(196, 175, 247, 0.564);
   margin: 5px;
   padding: 5px;
   border-radius: 20px;
-  color: blueviolet;
-  border: 1px double rgb(103, 6, 118);
+  border: 1px double rgb(62, 6, 118);
   width: 70%;
 }
 
@@ -141,4 +158,17 @@ label {
   justify-items: center;
   position: absolute;
   bottom: 20px;
+}
+
+label {
+  font-family: Forum;
+}
+
+button {
+  font-family: 'Fredericka the Great';
+  color: black;
+}
+
+button:hover {
+  font-weight: bolder;
 }

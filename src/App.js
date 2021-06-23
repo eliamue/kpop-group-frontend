@@ -1,22 +1,25 @@
 import React, { Component } from 'react';
-import ListPage from './ListPage.js';
-import DetailPage from './DetailPage.js';
-import CreatePage from './CreatePage.js';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
+import ListPage from './ListPage.js';
+import DetailPage from './DetailPage.js';
+import CreatePage from './CreatePage.js';
+import './App.css';
 
 export default class App extends Component {
   render() {
   return (
     <Router>
-      <div>
-        <h1>Kpop Groups</h1>
-        <p><Link to ="/">Home</Link></p>
-        <p><Link to ="/create">Add a Kpop Group</Link></p>
+      <div className='kpop-groups'>
+        <header>
+          <h1>Kpop Groups</h1>
+          <p><Link to ="/">Home</Link></p>
+          <p><Link to ="/create">Add a Kpop Group</Link></p>
+        </header>
         <Switch>
           <Route 
               path="/" 
@@ -25,13 +28,13 @@ export default class App extends Component {
                 <ListPage {...routerProps} />} 
           /> 
           <Route 
-              path="/" 
+              path="/kpop/:id" 
               exact
               render={(routerProps) => 
                 <DetailPage {...routerProps} />} 
             /> 
           <Route 
-              path="/" 
+              path="/create" 
               exact
               render={(routerProps) => 
                 <CreatePage {...routerProps} />} 

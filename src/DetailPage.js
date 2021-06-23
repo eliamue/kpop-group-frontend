@@ -13,7 +13,7 @@ export default class DetailPage extends Component {
 componentDidMount = async () => {
     const id = this.props.match.params.id;
     const group = await getOneKpopGroup(id);
-    const genders = await getAllGroupGenders;
+    const genders = await getAllGroupGenders();
 
     this.setState({
         name: group.name,
@@ -52,6 +52,7 @@ handleSubmit= async e => {
     this.props.history.push('/')
 }
     render() {
+        console.log(this.state);
         return (
             <div>
                 <h2>Update Kpop Group</h2>

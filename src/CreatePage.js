@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { createKpopGroup } from './fetch-utils';
+import './App.css';
 
 export default class CreatePage extends Component {
     state = {
@@ -43,19 +44,19 @@ export default class CreatePage extends Component {
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <label>
-                        Name of Group
+                        Name of Group: 
                         <input onChange={this.handleNameChange} />
                     </label>
                     <label>
-                        Number of Members
+                        Number of Members: 
                         <input type='number' maxLength='2' onChange={this.handleMembersChange} />
                     </label>
                     <label>
-                        Debut Year
+                        Debut Year: 
                         <input type='number' maxLength='4' onChange={this.handleDebutYearChange} />
                     </label>
                     <label>
-                        Gender of Group*
+                        Gender* of Group: 
                         <select onChange={this.handleGenderChange}>
                             <option value="1">Male</option>
                             <option value="2">Female</option>
@@ -63,7 +64,10 @@ export default class CreatePage extends Component {
                     </label>
                     <button>Create!</button>
                 </form>
-                <p>*For the purpose of this exercise, only 2 genders on the gender spectrum are listed. Be gay, do crime, eat the rich, screw the gender binary and norms.</p>
+                <p className='disclaimer'>
+                    <p>*For the purpose of this exercise, only 2 genders on the gender spectrum are listed.</p>
+                    <p>Be gay, do crime, eat the rich, screw gender norms, and go drink some water.</p>
+                </p>
             </div>
         )
     }

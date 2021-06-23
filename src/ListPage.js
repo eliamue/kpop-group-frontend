@@ -8,21 +8,33 @@ export default class ListPage extends Component {
     }
 
     componentDidMount = async () => {
-        const kpop = await getAllKpopGroups();
+        const kpopgroups = await getAllKpopGroups();
 
-        this.setState({kpop: kpop})
+        this.setState({kpop: kpopgroups})
     }
 
     render() {
         return (
-            <div>
+            <div className='kpoplist'>
                 {
                     this.state.kpop.map(kpop => <Link to={`/kpop/${kpop.id}`}>
-                    <div>
-                        <p>{kpop.name}</p>
-                        <p>{kpop.members}</p>
-                        <p>{kpop.gender}</p>
-                        <p>{kpop.debut_year}</p>
+                    <div className='pgroups'>
+                        <p className='name'>{kpop.name}</p>
+
+                        <section className='stats'>
+                            <p className='members-label'>
+                                consists of
+                                <p className='members'>
+                                    {kpop.members}
+                                </p>
+                                <p className='gender'>
+                                    {kpop.group_gender}
+                                </p>
+                            </p>
+                                <p  className='gender-label'>members</p>
+                        </section>
+                        
+                        <p className='debut-label'>Debuted in <p className='debut'>{kpop.debut_year}</p></p>
                     </div>
                     </Link>)
                 }
